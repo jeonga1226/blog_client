@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Route component={PostListPage} path={['/@:username', '/']} exact />
       <Route component={WritePage} path='/write' />
-      <Route component={PostPage} path='/@:username/:postId' />
+      <Route component={PostPage} path='/:postId' />
     </>
   );
 }

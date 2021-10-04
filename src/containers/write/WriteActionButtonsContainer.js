@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import WriteActionButtons from '../../components/write/WriteActionButtons';
 import { useSelector, useDispatch } from 'react-redux';
-import  { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { writePost } from '../../modules/write';
 
 const WriteActionButtonsContainer = ({ history }) => {
@@ -30,11 +30,12 @@ const WriteActionButtonsContainer = ({ history }) => {
         history.goBack();
     }
 
-    // 성공 혹은 싱ㄹ패 시 할 작업
+    // 성공 혹은 실패 시 할 작업
     useEffect(() => {
         if(post) {
-            const {_id, user } = post;
-            // history.push(`/@${user.username}/${_id}`);
+            console.log(post);
+            const {_id} = post;
+            history.push(`/${_id}`);
         }
         if(postError) {
             console.log(postError);
