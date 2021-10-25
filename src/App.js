@@ -7,7 +7,7 @@ import PostListPage from './pages/PostListPage';
 const App = () => {
   return (
     <>
-      <Route component={PostListPage} path={['/@:username', '/']} exact />
+      <Route component={PostListPage} path={['/']} exact />
       <Route component={WritePage} path='/write' />
       <Route component={PostPage} path='/:postId' />
     </>
