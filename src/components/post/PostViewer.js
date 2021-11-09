@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 import Tags from '../common/Tags';
+import SubInfo from '../common/SubInfo';
 
 const PostViewerBlock = styled(Responsive)`
   margin-top: 4rem;
@@ -17,17 +18,17 @@ const PostHead = styled.div`
     margin: 0;
   }
 `;
-const SubInfo = styled.div`
-    margin-top: 3rem;
-    color: ${palette.gray[6]};
+// const SubInfo = styled.div`
+//     margin-top: 3rem;
+//     color: ${palette.gray[6]};
 
-    span + span:before {
-        color: ${palette.gray[5]};
-        padding-left: 0.25rm;
-        padding-right: 0.25rem;
-        content: '\\B7';  /*가운데점 문자 */
-    }
-`
+//     span + span:before {
+//         color: ${palette.gray[5]};
+//         padding-left: 0.25rm;
+//         padding-right: 0.25rem;
+//         content: '\\B7';  /*가운데점 문자 */
+//     }
+// `
 
 const PostContent = styled.div`
   font-size: 1.3125rem;
@@ -54,12 +55,16 @@ const PostViewer = ({ post, error, loading }) => {
     <PostViewerBlock>
       <PostHead>
         <h1>{title}</h1>
-        <SubInfo>
+        <SubInfo
+          publishedDate={publishedDate}
+          hasMarginTop
+        />
+        {/* <SubInfo>
           <span>
               <b>신정아</b>
           </span>
           <span>{new Date(publishedDate).toLocaleDateString()} </span>
-        </SubInfo>
+        </SubInfo> */}
         <Tags tags={tags} />
       </PostHead>
       <PostContent dangerouslySetInnerHTML={{ __html: body }} />
