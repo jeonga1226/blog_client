@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Responsive from '../common/Responsive';
 import Button from '../common/Button';
 import palette from '../../lib/styles/palette';
-// import SubInfo from '../common/SubInfo';
+import SubInfo from '../common/SubInfo';
 import Tags from '../common/Tags';
 
 const PostListBlock = styled(Responsive)`
@@ -40,16 +40,16 @@ const PostItemBlock = styled.div`
     }
 `;
 
-const SubInfo = styled.div`
-    color: ${palette.gray[6]};
+// const SubInfo = styled.div`
+//     color: ${palette.gray[6]};
 
-    span + span:before {
-        color: ${palette.gray[4]};
-        padding-left: 0.25rem;
-        padding-rigth: 0.25rem;
-        content: '\\B7';    /* 가운뎃점 문자 */
-    }
-`;
+//     span + span:before {
+//         color: ${palette.gray[4]};
+//         padding-left: 0.25rem;
+//         padding-rigth: 0.25rem;
+//         content: '\\B7';    /* 가운뎃점 문자 */
+//     }
+// `;
 
 
 // const Tags = styled.div`
